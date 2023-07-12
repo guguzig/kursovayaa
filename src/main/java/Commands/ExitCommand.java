@@ -1,12 +1,9 @@
-package Commands;
-import org.example.NoteBook;
-
+package commands;
 
 public class ExitCommand implements Command {
     @Override
-    public void execute(NoteBook noteBook, String[] arguments) {
+    public void execute(String[] arguments) {
         System.out.println("Выход из приложения.");
         System.exit(0);
     }
 }
-

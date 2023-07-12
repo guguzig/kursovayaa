@@ -1,7 +1,5 @@
-package Commands;
-
-import org.example.NoteBook;
+package commands;
 
 public interface Command {
-    void execute(NoteBook noteBook, String[] arguments);
+    void execute(String[] arguments);
 }

@@ -1,9 +1,8 @@
-package Commands;
-import org.example.NoteBook;
+package commands;
 
 public class HelpCommand implements Command {
     @Override
-    public void execute(NoteBook noteBook, String[] arguments) {
+    public void execute(String[] arguments) {
         System.out.println("Список доступных команд:");
         System.out.println("help - выводит на экран список доступных команд с их описанием");
         System.out.println("note-new - создать новую заметку");

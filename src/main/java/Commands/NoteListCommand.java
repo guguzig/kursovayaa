@@ -1,19 +1,26 @@
-package Commands;
-import org.example.NoteBook;
+package commands;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import domain.Note;
 import java.util.List;
 
 public class NoteListCommand implements Command {
-    @Override
-    public void execute(NoteBook noteBook, String[] arguments) {
-        List<String> labels = new ArrayList<>();
-        if (arguments.length > 0) {
-            labels.addAll(Arrays.asList(arguments));
-        }
+    private List<Note> notes;
 
-        noteBook.listNotes(labels);
+    public NoteListCommand(List<Note> notes) {
+        this.notes = notes;
+    }
+
+    @Override
+    public void execute(String[] arguments) {
+        List<String> labels = List.of(arguments);
+
+        for (Note note : notes) {
+            if (labels.isEmpty() || note.hasLabels(labels)) {
+                System.out.println(note);
+            }
+        }
     }
 }
+
+
 
